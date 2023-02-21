@@ -1,10 +1,13 @@
-from flask import Flask
+from flask import Flask,request
 
-app = Flask(__name__)
+app=Flask(__name__)
 
-@app.route("/")
-def hello_world():
-    return "<h1>Hello, World!</h1>"
+@app.route('/')
+def hello():
+    return "Hello World"
+@app.route('/hello')
+def welcome():
+    name=request.args.get('x')
+    return f"Welcome to {name} World"
 
-if __name__=="__main__":
-    app.run(host="0.0.0.0")
+app.run(host='0.0.0.0')
