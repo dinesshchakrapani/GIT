@@ -27,7 +27,7 @@ def math_ops():
             r = num1/num2
             result = "The divide of " + str(num1) + 'and ' + str(num2) + "is " + str(r)
             
-        return render_template('results.html' , result = result)
+        return render_template('result.html' , result = result)
 
 
 
